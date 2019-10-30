@@ -20,7 +20,7 @@ const Container = styled.div``;
 
 const veSeTaLigado = () => {
   const currentHour = new Date().getHours();
-  return currentHour > 10 && currentHour < 22;
+  return currentHour >= 10 && currentHour <= 22;
 };
 
 const JaquinPutaco = () => (
