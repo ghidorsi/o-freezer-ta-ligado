@@ -6,7 +6,15 @@ import styled from "styled-components";
 
 const Jackin = styled.img``;
 
-const JackinSays = styled.h1``;
+const Title = styled.h1`
+  text-transform: uppercase;
+  margin-bottom: 100px;
+`
+
+const JackinSays = styled.h2`
+  font-size: 58px;
+  text-transform: uppercase;
+`;
 
 const Container = styled.div``;
 
@@ -15,10 +23,11 @@ const veSeTaLigado = () => {
   return currentHour > 10 && currentHour < 22;
 };
 
+
 const JaquinPutaco = () => (
   <>
     <Jackin src={pistolJacquin} className="App-logo" alt="SAI DAQUI" />
-    <JackinSays>CALA SU BOCA</JackinSays>
+    <JackinSays>cala su boca</JackinSays>
   </>
 );
 
@@ -38,7 +47,8 @@ const App: React.FC = () => {
   return (
     <Container className="App">
       <header className="App-header">
-        {!taLigado ? <JaquinDeBoa/> : <JaquinPutaco /> }
+        <Title>O Freezer tá ligado?</Title>
+        {taLigado ? <JaquinDeBoa/> : <JaquinPutaco /> }
       </header>
     </Container>
   );
