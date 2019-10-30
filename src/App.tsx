@@ -9,7 +9,7 @@ const Jackin = styled.img``;
 const Title = styled.h1`
   text-transform: uppercase;
   margin-bottom: 100px;
-`
+`;
 
 const JackinSays = styled.h2`
   font-size: 58px;
@@ -22,7 +22,6 @@ const veSeTaLigado = () => {
   const currentHour = new Date().getHours();
   return currentHour > 10 && currentHour < 22;
 };
-
 
 const JaquinPutaco = () => (
   <>
@@ -48,7 +47,7 @@ const App: React.FC = () => {
     <Container className="App">
       <header className="App-header">
         <Title>O Freezer tá ligado?</Title>
-        {taLigado ? <JaquinDeBoa/> : <JaquinPutaco /> }
+        {taLigado ? <JaquinDeBoa /> : <JaquinPutaco />}
       </header>
     </Container>
   );
