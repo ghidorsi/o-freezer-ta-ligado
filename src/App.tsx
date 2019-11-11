@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import pistolJacquin from "./jacka-putaco.jpeg";
-import niceJacquin from "./jaquin_de_boa.jpg";
+import niceJacquin from "./jacquin_de_boa.jpg";
+import frasesPutaco from "./frasesPutaco.json"
 import "./App.css";
 import styled from "styled-components";
 
-const Jackin = styled.img``;
+const Jacquin = styled.img``;
 
 const Title = styled.h1`
   text-transform: uppercase;
   margin-bottom: 100px;
 `;
 
-const JackinSays = styled.h2`
+const JacquinSays = styled.h2`
   font-size: 58px;
   text-transform: uppercase;
 `;
@@ -23,17 +24,21 @@ const veSeTaLigado = () => {
   return currentHour >= 10 && currentHour <= 22;
 };
 
-const JaquinPutaco = () => (
+const fraseJacquinPutaco = () => {
+  return frasesPutaco[Math.floor(Math.random() * frasesPutaco.length)];
+}
+
+const JacquinPutaco = () => (
   <>
-    <Jackin src={pistolJacquin} className="App-logo" alt="SAI DAQUI" />
-    <JackinSays>cala su boca</JackinSays>
+    <Jacquin src={pistolJacquin} className="App-logo" alt="SAI DAQUI" />
+    <JacquinSays>{fraseJacquinPutaco()}</JacquinSays>
   </>
 );
 
-const JaquinDeBoa = () => (
+const JacquinDeBoa = () => (
   <>
-    <Jackin src={niceJacquin} className="App-logo" alt="MEU GAROTO" />
-    <JackinSays>Que orgulho</JackinSays>
+    <Jacquin src={niceJacquin} className="App-logo" alt="MEU GAROTO" />
+    <JacquinSays>Que orgulho</JacquinSays>
   </>
 );
 
@@ -47,7 +52,7 @@ const App: React.FC = () => {
     <Container className="App">
       <header className="App-header">
         <Title>O Freezer tá ligado?</Title>
-        {taLigado ? <JaquinDeBoa /> : <JaquinPutaco />}
+        {taLigado ? <JacquinDeBoa /> : <JacquinPutaco />}
       </header>
     </Container>
   );
